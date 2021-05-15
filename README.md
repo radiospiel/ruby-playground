@@ -20,7 +20,7 @@ Note that there is a script `scripts/ruby-playground` that one can install in
 
 ### Ruby code setup
 
-A playgroup app is loaded by running
+A playground app is loaded by running
 
 ```ruby
 load "config/application.rb"
