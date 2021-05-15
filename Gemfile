@@ -10,6 +10,17 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
 
+# -- various simple gems -----------------------------------------------------
+
+# simple SQL client for Postgresql; see https://github.com/radiospiel/simple-sql
+# gem "pg"
+# gem "simple-sql"
+
+# simple HTTP client; see https://github.com/radiospiel/simple-http
+# gem "simple-http"
+
+# simple CLI builder; see https://github.com/radiospiel/simple-cli
+# gem "simple-cli"
 
 # -- development helpers ------------------------------------------------------
 

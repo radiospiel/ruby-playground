@@ -1,0 +1,25 @@
+# database.yml file for ActiveRecord and/or simple-sql.
+#
+# By default neither of these gems is enabled in the Gemfile.
+
+defaults: &defaults
+  adapter:    postgresql
+  host:       '127.0.0.1'
+  username:   'admin'
+  port:       '5432'
+  database:   'playground'
+  encoding:   utf8
+  reconnect:  true
+  pool:       5
+  timeout:    5000
+  password:   'admin'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+  database:   'playground_test'
+
+production:
+  <<: *defaults
