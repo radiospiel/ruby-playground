@@ -1,4 +1,5 @@
 #!/bin/bash
 DIRS="app,lib,spec"
 
+export SKIP_SIMPLE_COV=1
 watchr $DIRS scripts/test "$@"

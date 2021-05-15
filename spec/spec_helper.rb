@@ -15,7 +15,7 @@ SimpleCov.start do
   # add_filter '/lib.static/'
 
   # minimum_coverage 90
-end
+end unless ENV["SKIP_SIMPLE_COV"] == "1"
 
 load "config/application.rb"
 
