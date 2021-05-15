@@ -60,4 +60,8 @@ git clone --depth=1 --branch=master $REPO.git $PATH_TO_DIR
   bundle install
 )
 
-echo "Success: your new repository is prepared in $PATH_TO_DIR"
+cat <<MSG
+Success: your new repository is prepared in $PATH_TO_DIR. 
+
+For more info see $REPO
+MSG
