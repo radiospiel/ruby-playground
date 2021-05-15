@@ -1,0 +1,52 @@
+#!/usr/bin/env ruby
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+  gem 'rb-fsevent', require: false
+end
+
+require 'rb-fsevent'
+
+if ARGV.length < 2
+  STDERR.puts "watchr dir ruby-parameter(s)..."
+  abort
+end
+
+patterns = ARGV.shift.split(",")
+paths = patterns.map { |pattern| Dir.glob(pattern) }.flatten.sort.uniq
+
+$args = ARGV.dup
+
+def do_ruby
+  STDERR.puts $args.join(" ")
+  STDERR.puts "=" * 80
+  
+  system(*$args)
+end
+
+puts <<~MSG
+Watching #{paths.length} paths matching #{patterns.join(", ")}.
+===============================================================================
+MSG
+
+do_ruby
+
+fsevent = FSEvent.new
+fsevent.watch paths, latency: 0.5 do |directories, event_meta|
+  puts "Detected change inside: #{directories.inspect}"
+
+  events = event_meta["events"]
+  paths = events.map { |event| event["path"] }
+
+  # event_meta.events.each do |event|
+  #    puts "event ID: #{event.id}"
+  #    puts "path: #{event.path}"
+  #    puts "c flags: #{event.cflags}"
+  #    puts "named flags: #{event.flags.join(', ')}"
+  #    # named flags will include strings such as `ItemInodeMetaMod` or `OwnEvent`
+  #  end
+
+  do_ruby
+end
+fsevent.run

@@ -1,0 +1,4 @@
+#!/bin/bash
+DIRS="app,lib,spec"
+
+watchr $DIRS scripts/test "$@"

@@ -55,3 +55,23 @@ once inside this repository. This feature is especially nice when running rspec,
 because it lets you copy failed specs directly from the rspec failure output.
 
 To make use of that feature you need to have `direnv` installed, see https://github.com/direnv/direnv
+
+### scripts and shortcuts
+
+The `./scripts` directory contains a number of development helper scripts. They
+usually require a bash shell; macOS' version (3.2.57) is good enough.
+
+- `scripts/console`: loads an app and starts a Pry console;
+- `scripts/test`: runs rspec, with a given sets of arguments;
+- `scripts/watch`: watches a specified set of folders (see `scripts/watch`), and runs tests on changed files.
+
+#### shortcuts
+
+On my machine I have a number of one-letter aliases setup in `.profile`, that
+integrate with the development scripts here:
+
+```bash
+alias C='scripts/console'
+alias T='scripts/test'
+alias W='scripts/watch'
+```
