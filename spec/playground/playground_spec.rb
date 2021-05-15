@@ -26,4 +26,10 @@ RSpec.describe "playground" do
       expect(Dummy).to be_a(Module)
     end
   end
+
+  describe "spec helpers" do
+    it "loads a test helper from spec/helpers" do
+      expect(test_helper_function).to eq(:ok)
+    end
+  end
 end

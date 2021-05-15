@@ -10,4 +10,12 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
 
-gem "rspec"
+# -- ruby specs ---------------------------------------------------------------
+
+group :test do
+  gem "rspec"
+
+  gem "pry-byebug"
+  gem "timecop"
+  gem "simplecov"
+end

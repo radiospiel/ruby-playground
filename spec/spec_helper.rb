@@ -1,12 +1,34 @@
 ENV['RAILS_ENV'] = 'test'
 ENV['TZ'] = 'Etc/UTC'
+
+require 'simplecov'
+require 'pry-byebug'
+require 'timecop'
+
+SimpleCov.start do
+  add_filter '/spec/'
+  add_filter '/config/'
+
+  # add_filter '/lib/'
+  # add_filter '/lib.static/'
+
+  # minimum_coverage 90
+end
+
 load "config/application.rb"
+
+Dir.glob("spec/helpers/*.rb").sort.each do |path|
+  load path
+end
 
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.backtrace_exclusion_patterns << /\.rvm/
+
+  config.include ExampleTestHelper
 
   # --- RSpec original settings -----------------------------------------------
 
