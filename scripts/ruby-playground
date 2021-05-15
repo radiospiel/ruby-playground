@@ -1,0 +1,30 @@
+#!/bin/bash
+set -eu -o pipefail
+
+SCRIPT=https://raw.githubusercontent.com/radiospiel/ruby-playground/master/scripts/setup.sh
+
+# -- usage --------------------------------------------------------------------
+
+function help() {
+  local msg=$1
+
+  cat <<TXT
+Usage: run as
+
+  $0 path/to/new/dir
+
+TXT
+
+  printf "%s\n\n" "$1"
+
+  exit 1
+}
+
+# -- check args ---------------------------------------------------------------
+
+# we need an argument
+
+[ "${1:-}" ] || help "missing path/to/new/dir argument"
+! [ -e "$1" ] || help "target directory exists already"
+
+curl -s "$SCRIPT" | bash -s - "$1"

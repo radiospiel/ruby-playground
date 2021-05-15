@@ -9,14 +9,14 @@ This project provides a one-step quick start template to start a ruby project. I
 
 ## How to use
 
-### Clone and clear
+### Checkout and prepare
 
-    # see https://stackoverflow.com/questions/11497457/git-clone-without-git-directory
-    git clone --depth=1 --branch=master https://github.com/radiospiel/ruby-playground.git path/to/new/repo
-    cd path/to/new/repo
-    direnv allow
-    rm -rf .git
-    bundle install
+To check out and prepare the ruby playground in `path/to/new/dir` run
+
+    curl -s https://raw.githubusercontent.com/radiospiel/ruby-playground/scripts/setup.sh | bash -s - path/to/new/dir
+
+Note that there is a script `scripts/ruby-playground` that one can install in
+`/usr/local/bin` which wraps the above command into a simple to run script.
 
 ### Ruby code setup
 
