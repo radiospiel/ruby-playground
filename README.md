@@ -38,5 +38,20 @@ This should provide a easy start for gem-like projects (add code in `./lib`), an
 
 The playground comes with a ready-to-roll rspec setup; simply run
 
-    bundle exec rspec
+    rspec
 
+### Rubocop
+
+The playground comes with a ready-to-roll rspec setup; simply run
+
+    rubocop
+
+## Various notes
+
+### `direnv`
+
+This repository comes with a `.envrc` file, which adds `./bin/` to the current path
+once inside this repository. This feature is especially nice when running rspec, 
+because it lets you copy failed specs directly from the rspec failure output.
+
+To make use of that feature you need to have `direnv` installed, see https://github.com/direnv/direnv
