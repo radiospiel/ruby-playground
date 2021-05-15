@@ -1,22 +1,22 @@
+# frozen_string_literal: true
+
 require "logger"
-# All the Rails that we need.
 
+# MiniRails provides a minimal Rails implementation
 module MiniRails
-  # --- SystemInfo ------------------------------------------------------------
-
+  # provides Rails.env and Rails.root
   module SystemInfo
     def env
-      @env ||= ENV['RAILS_ENV'] || ENV['RACK_ENV'] || 'development'
+      @env ||= ENV["RAILS_ENV"] || ENV["RACK_ENV"] || "development"
     end
 
     def root
-      @root ||= File.expand_path(File.join(File.dirname(__FILE__), '../..'))
+      @root ||= Pathname.new File.expand_path(File.join(File.dirname(__FILE__), "../.."))
     end
   end
   extend SystemInfo
 
-  # --- Logging ---------------------------------------------------------------
-
+  # provides Rails.logger
   module Logging
     attr_accessor :logger
   end

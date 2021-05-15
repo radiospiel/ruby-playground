@@ -1,0 +1,16 @@
+# inherit_from: .rubocop_todo.yml
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'Gemfile'
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*_spec.rb

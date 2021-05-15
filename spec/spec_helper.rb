@@ -1,13 +1,15 @@
-ENV['RAILS_ENV'] = 'test'
-ENV['TZ'] = 'Etc/UTC'
+# frozen_string_literal: true
 
-require 'simplecov'
-require 'pry-byebug'
-require 'timecop'
+ENV["RAILS_ENV"] = "test"
+ENV["TZ"] = "Etc/UTC"
+
+require "simplecov"
+require "pry-byebug"
+require "timecop"
 
 SimpleCov.start do
-  add_filter '/spec/'
-  add_filter '/config/'
+  add_filter "/spec/"
+  add_filter "/config/"
 
   # add_filter '/lib/'
   # add_filter '/lib.static/'
@@ -58,7 +60,7 @@ RSpec.configure do |config|
     # Use the documentation formatter for detailed output,
     # unless a formatter has already been configured
     # (e.g. via a command-line flag).
-    config.default_formatter = 'doc'
+    config.default_formatter = "doc"
   end
 
   # Print the 10 slowest examples and example groups at the

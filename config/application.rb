@@ -1,5 +1,7 @@
-$: << "#{Dir.getwd}/lib.static"
-$: << "#{Dir.getwd}/lib"
+# frozen_string_literal: true
+
+$LOAD_PATH << "#{Dir.getwd}/lib.static"
+$LOAD_PATH << "#{Dir.getwd}/lib"
 
 # load initializers
 Dir.glob("config/initializers/*.rb").sort.each do |path|
