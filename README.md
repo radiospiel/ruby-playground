@@ -47,6 +47,11 @@ The playground comes with a ready-to-roll rspec setup; simply run
 
     rubocop
 
+### Github actions
+
+The playground comes with a `ruby-test` github action. Simply push to github, have
+actions generally enabled, and enjoy the workflow.
+
 ## Various notes
 
 ### `direnv`
@@ -76,3 +81,7 @@ alias C='scripts/console'
 alias T='scripts/test'
 alias W='scripts/watch'
 ```
+
+### Want to add a github action badge?
+
+See https://docs.github.com/en/actions/managing-workflow-runs/adding-a-workflow-status-badge
