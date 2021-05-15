@@ -65,3 +65,5 @@ Success: your new repository is prepared in $PATH_TO_DIR.
 
 For more info see $REPO
 MSG
+
+cd "$PATH_TO_DIR"
