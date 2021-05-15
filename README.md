@@ -14,6 +14,7 @@ This project provides a one-step quick start template to start a ruby project. I
     # see https://stackoverflow.com/questions/11497457/git-clone-without-git-directory
     git clone --depth=1 --branch=master https://github.com/radiospiel/ruby-playground.git path/to/new/repo
     cd path/to/new/repo
+    direnv allow
     rm -rf .git
     bundle install
 
