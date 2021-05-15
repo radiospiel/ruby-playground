@@ -3,19 +3,23 @@
 ENV["RAILS_ENV"] = "test"
 ENV["TZ"] = "Etc/UTC"
 
-require "simplecov"
 require "pry-byebug"
 require "timecop"
 
-SimpleCov.start do
-  add_filter "/spec/"
-  add_filter "/config/"
+unless ENV["SKIP_SIMPLE_COV"] == "1"
 
-  # add_filter '/lib/'
-  # add_filter '/lib.static/'
+  require "simplecov"
 
-  # minimum_coverage 90
-end unless ENV["SKIP_SIMPLE_COV"] == "1"
+  SimpleCov.start do
+    add_filter "/spec/"
+    add_filter "/config/"
+
+    # add_filter '/lib/'
+    # add_filter '/lib.static/'
+
+    # minimum_coverage 90
+  end
+end
 
 load "config/application.rb"
 

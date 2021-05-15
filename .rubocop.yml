@@ -4,6 +4,7 @@ AllCops:
   NewCops: enable
   Exclude:
     - 'Gemfile'
+    - 'bin/*'
 
 Bundler/OrderedGems:
   Enabled: false
@@ -14,3 +15,15 @@ Style/StringLiterals:
 Metrics/BlockLength:
   Exclude:
     - spec/**/*_spec.rb
+
+# Use $stderr instead of STDERR
+Style/GlobalStdStream:
+  Enabled: false
+
+# Use warn instead of STDERR.puts
+Style/StderrPuts:
+  Enabled: false
+
+# Need to re-enable all disabled cops in a source file
+Lint/MissingCopEnableDirective:
+  Enabled: false

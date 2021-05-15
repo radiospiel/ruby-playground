@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# rubocop:disable Layout/HeredocIndentation
+
 load "config/application.rb"
 
 STDERR.puts <<~MSG
