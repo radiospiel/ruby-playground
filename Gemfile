@@ -12,6 +12,9 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 # -- various simple gems -----------------------------------------------------
 
+# see see https://github.com/radiospiel/expectation
+gem "expectation", "1.1.4"
+
 # simple SQL client for Postgresql; see https://github.com/radiospiel/simple-sql
 # gem "pg"
 # gem "simple-sql"
